@@ -44,6 +44,10 @@
             <label></label>
             <p id="answerBox"></p>
         </div>
+        <div>
+            <label></label>
+            <p id="answerBox2"></p>
+        </div>
    
     <script>
  
@@ -60,9 +64,15 @@
         console.log(q2);
     
         elasticity = Math.abs(((p1 - p2) / p1) / ((q1 - q2) / q1));
-        if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please fill all inputs!'); }
+        if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please fill all inputs!'); document.getElementById('answerBox2').textContent=(' '); }
         else {
         document.getElementById('answerBox').textContent=('The elasticity is ' + elasticity); }
+        
+        if(inFinite(elasticity)) == false){ document.getElementById('answerBox2').textContent=('The demand curve is perfectly inelastic'); }
+        else if(elasticity > 1) { document.getElementById('answerBox2').textContent=('The demand curve is inelastic'); }
+        else if(elasticity = 1) { document.getElementById('answerBox2').textContent=('The demand curve is unitary elastic'); }
+        else if(elasticity = 0) { document.getElementById('answerBox2').textContent=('The demand curve is perfectly elastic'); }
+        else if(elasticity < 1) { document.getElementById('answerBox2').textContent=('The demand curve is elastic'); }
     }
     
         </script>
