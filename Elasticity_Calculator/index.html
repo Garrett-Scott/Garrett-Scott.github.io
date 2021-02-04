@@ -40,6 +40,10 @@
             <button id="btn" onClick="calculateElasticity()">Calculate!</button>
             
         </div>
+    <div>
+            <button id="btn2" onClick="calculateElasticityMidpoint()">Calculate with midpoint method!</button>
+            
+        </div>
         <div>
             <label></label>
             <p id="answerBox"></p>
@@ -48,6 +52,7 @@
             <label></label>
             <p id="answerBox2"></p>
         </div>
+    
    
     <script>
  
@@ -72,7 +77,27 @@
         else if(elasticity < 1) { document.getElementById('answerBox2').textContent=('The demand curve is inelastic'); } }
        
     }
+    function calculateElasticityMidpoint() {
     
+    var p1 = document.getElementById('p1').value;
+    var q1 = document.getElementById('q1').value;
+    var p2 = document.getElementById('p2').value;
+    var q2 = document.getElementById('q2').value;
+    
+        elasticity = Math.abs(((q1 - q2) / ((q1 + q2)/2) / ((p1 - p2) / ((p1 + p2) / 2));
+        
+        if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please input 2 points on a demand curve.'); document.getElementById('answerBox2').textContent=(' '); }
+        //else if(p1 == p2 && q1 == q2) { document.getElementById('answerBox').textContent=('The points are the same!'); document.getElementById('answerBox2').textContent=(' ');}
+        else {
+        document.getElementById('answerBox').textContent=('The elasticity is ' + elasticity); 
+        
+        if(isFinite(elasticity) == false){ document.getElementById('answerBox2').textContent=('The demand curve is perfectly elastic'); }
+        else if(elasticity > 1) { document.getElementById('answerBox2').textContent=('The demand curve is elastic'); }
+        else if(elasticity == 1) { document.getElementById('answerBox2').textContent=('The demand curve is unitary elastic'); }
+        else if(elasticity == 0) { document.getElementById('answerBox2').textContent=('The demand curve is perfectly inelastic'); }
+        else if(elasticity < 1) { document.getElementById('answerBox2').textContent=('The demand curve is inelastic'); } }
+       
+    }
         </script>
 </body>
 </html>
