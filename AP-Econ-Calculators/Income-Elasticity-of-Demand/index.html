@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elasticity Calculator</title>
+    <style>
+        .formBox{
+            padding: 0.5rem 2rem;
+        }
+    </style>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+    
+<body>
+    <header>
+  <h1>Elasticity Calculator</h1>
+  </header>
+    <p>
+        Using this calculator is easy! Simply put in all the values and it will give you the answer!
+    </p>
+        <div>
+            <label for="title">Income 1</label>
+            <input type="number" id="i1" placeholder="income 1"/>
+        </div>
+        <div>
+            <label for="title">Income 2</label>
+            <input type="number" id="i2" placeholder="income 2"/>
+        </div>
+        <div>
+            <label for="title">Quantity 1</label>
+            <input type="number" id="q1" placeholder="quantity 1"/>
+        </div>
+        <div>
+            <label for="title">Quantity 2</label>
+            <input type="number" id="q2" placeholder="quantity 2"/>
+        </div>
+                <div>
+            <button id="btn" onClick="calculateIncomeElasticity()">Calculate!</button>
+            
+        </div> 
+        <div>
+            <label></label>
+            <p id="answerBox"></p>
+        </div>
+        <div>
+            <label></label>
+            <p id="answerBox2"></p>
+        </div>
+    
+   
+    <script>
+ 
+    function calculateIncomeElasticity() {
+    
+    var i1 = parseInt(document.getElementById('i1').value);
+    var i2 = parseInt(document.getElementById('i2').value);
+    var q1 = parseInt(document.getElementById('q1').value);
+    var q2 = parseInt(document.getElementById('q2').value);
+    
+        elasticity = Math.abs(((q2 - q1) / q1) / ((i2 - i1) / i1));
+        
+        if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please input 2 points on a demand curve.'); document.getElementById('answerBox2').textContent=(' '); }
+        //else if(p1 == p2 && q1 == q2) { document.getElementById('answerBox').textContent=('The points are the same!'); document.getElementById('answerBox2').textContent=(' ');}
+        else {
+        document.getElementById('answerBox').textContent=('The elasticity is ' + elasticity + '.'); 
+        
+        if(elasticity > 1) { document.getElementById('answerBox2').textContent=('The good is a luxury good.'); }
+        else if(elasticity < 0) { document.getElementById('answerBox2').textContent=('The good is an inferior good.'); }
+        else { document.getElementById('answerBox2').textContent=('The good is a regular good.'); }
+        
+    }
+
+        </script>
+</body>
+</html>
