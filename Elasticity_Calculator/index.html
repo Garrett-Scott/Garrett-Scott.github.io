@@ -84,7 +84,7 @@
     var p2 = document.getElementById('p2').value;
     var q2 = document.getElementById('q2').value;
     
-        elasticity = Math.abs(((q1 - q2) / ((q1 + q2)/2)) / ((p1 - p2) / ((p1 + p2) / 2));
+        elasticity = Math.abs(((q1 - q2) / ((q1 + q2)/2)) / ((p1 - p2) / ((p1 + p2) / 2)));
         
         if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please input 2 points on a demand curve.'); document.getElementById('answerBox2').textContent=(' '); }
         //else if(p1 == p2 && q1 == q2) { document.getElementById('answerBox').textContent=('The points are the same!'); document.getElementById('answerBox2').textContent=(' ');}
