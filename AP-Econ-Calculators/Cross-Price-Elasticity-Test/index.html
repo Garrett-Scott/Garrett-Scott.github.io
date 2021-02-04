@@ -64,7 +64,7 @@
         if(isNaN(elasticity)) { document.getElementById('answerBox').textContent=('Please input 2 points on a demand curve.'); document.getElementById('answerBox2').textContent=(' '); }
         //else if(p1 == p2 && q1 == q2) { document.getElementById('answerBox').textContent=('The points are the same!'); document.getElementById('answerBox2').textContent=(' ');}
         else {
-        document.getElementById('answerBox').textContent=('The cross-price elasticity coefficient is' + elasticity + '.'); 
+        document.getElementById('answerBox').textContent=('The cross-price elasticity coefficient is ' + elasticity + '.'); 
         
         if(elasticity > 0) { document.getElementById('answerBox2').textContent=('The goods are substitutes.'); }
         else if(elasticity < 0) { document.getElementById('answerBox2').textContent=('The goods are complementary.'); }
